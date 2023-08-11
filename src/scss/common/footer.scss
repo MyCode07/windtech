@@ -1,0 +1,116 @@
+.footer {
+    @include adaptive-value("margin-top", 150, 100, 1);
+    background-color: $color_main;
+    padding: 50px 0;
+
+    color: $color_2;
+
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__body
+
+    &__body {
+    }
+
+    // .footer__top
+
+    &__top {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            white-space: nowrap;
+            @include adaptive-value("font-size", 12, 10, 1);
+        }
+
+        p {
+            text-align: right;
+            @include adaptive-value("font-size", 39, 30, 1);
+            text-transform: uppercase;
+
+            a {
+                display: block;
+            }
+        }
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        svg {
+            width: 100%;
+            height: auto;
+            fill: currentColor;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+
+            @include adaptive-value("font-size", 16, 12, 1);
+
+            @media (max-width: 1024px) {
+                display: block;
+
+                & > :not(:last-child) {
+                    margin-bottom: 50px;
+                }
+            }
+
+            & > :first-child {
+                max-width: 750px;
+
+                @media (max-width: 1024px) {
+                    max-width: none;
+                }
+            }
+
+            & > :last-child {
+                max-width: 450px;
+
+                @media (max-width: 1024px) {
+                    max-width: none;
+                }
+            }
+
+            ul {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > :first-child {
+                    width: auto;
+                }
+
+                & > :not(:last-child) {
+                    @include adaptive-value("margin-right", 15, 10, 1);
+                }
+
+                a {
+                    border-bottom: 1px solid currentColor;
+                }
+            }
+
+            & > :not(:last-child) {
+                margin-right: 15px;
+            }
+
+            .nav-left {
+            }
+
+            .nav-right {
+                p {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}

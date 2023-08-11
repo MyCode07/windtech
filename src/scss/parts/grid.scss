@@ -1,0 +1,168 @@
+.grid {
+    display: grid;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+        display: block;
+
+        & > :not(:last-child) {
+            margin-bottom: 35px;
+        }
+    }
+
+    // .grid-about
+
+    &-about {
+    }
+
+    // .grid-3
+
+    &-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    // .grid-2
+
+    &-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // .grid-news
+
+    &-news {
+        counter-reset: count;
+        gap: 0;
+
+        @media (min-width: 769px) {
+            & > :first-child {
+                grid-row: span 2;
+                border-right: 0;
+            }
+
+            & > :nth-child(2) {
+                grid-column: span 2;
+                border-bottom: 0;
+
+                h3 {
+                    @include adaptive-value("font-size", 46, 18, 1);
+                }
+            }
+
+            & > :nth-child(3) {
+                border-right: 0;
+            }
+
+            & > :nth-child(4) {
+            }
+        }
+
+        .new {
+            counter-increment: count;
+
+            &-date {
+                &:before {
+                    content: "0" counter(count);
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    // .grid-services
+
+    &-services {
+        gap: 0;
+
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.1;
+
+            border: 1px solid $color_main;
+        }
+
+        @media (max-width: 768px) {
+            & > :not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // .grid__about
+
+    &__about {
+        // .grid__about-item
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 768px) {
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            p {
+                flex: 1 1 auto;
+
+                & > :not(:last-child) {
+                    margin-bottom: 25px;
+                }
+
+                @media (max-width: 768px) {
+                    order: 3;
+                    margin-top: 15px;
+                }
+            }
+
+            span {
+                font-weight: 900;
+                line-height: 0.75;
+                margin-top: 0.5em;
+
+                @include adaptive-value("font-size", 140, 50, 1);
+
+                @media (max-width: 768px) {
+                    order: 1;
+                    margin-top: 0;
+                }
+            }
+
+            label {
+                margin-top: 15px;
+
+                @media (max-width: 768px) {
+                    margin-top: 0;
+                    margin-left: 15px;
+                    max-width: 58%;
+                }
+            }
+
+            &._flex {
+                flex-direction: row;
+
+                align-items: flex-start;
+                justify-content: space-between;
+
+                p {
+                    max-width: 360px;
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+
+                span {
+                    margin-top: 0 !important;
+                }
+            }
+        }
+    }
+}
