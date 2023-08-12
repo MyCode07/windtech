@@ -1,0 +1,85 @@
+@@include('./html/head.html', {
+"title":"News",
+})
+
+@@include('./html/header.html')
+
+<main>
+
+    <section class="section hero-page">
+        <div class="section__container _container">
+            <div class="section__body">
+                <h1>News</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="tabs">
+                    <button class="tab">Press Release</button>
+                    <button class="tab _active">Company Announcement</button>
+                </div>
+                <div class="tabs__content">
+                    <div class="tab__content"></div>
+                    <div class="tab__content _active">
+                        <ul>
+                            <li><a href="#">Small</a></li>
+                            <li><a href="#">Big</a></li>
+                            <li class="_active"><a href="#">WT-Vertical</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section news-all">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2 grid-news">
+                    <article class="new">
+                        <span class="new-date">16.07.2023</span>
+                        <a href="" class="new-image">
+                            <img src="img/news/1.png" alt="">
+                        </a>
+                        <h3><a href="">WindTech Expands Renewable Energy Footprint with New Wind Farm Project</a></h3>
+                        <a href="" class="_more">learn more</a>
+                    </article>
+                    <article class="new">
+                        <span class="new-date">16.07.2023</span>
+                        <a href="" class="new-image">
+                            <img src="img/news/2.png" alt="">
+                        </a>
+                        <h3><a href="">WindTech Expands Renewable Energy Footprint with New Wind Farm Project</a></h3>
+                        <a href="" class="_more">learn more</a>
+                    </article>
+                    <article class="new">
+                        <span class="new-date">16.07.2023</span>
+                        <a href="" class="new-image">
+                            <img src="img/news/3.png" alt="">
+                        </a>
+                        <h3><a href="">WindTech Expands Renewable Energy Footprint with New Wind Farm Project</a></h3>
+                        <a href="" class="_more">learn more</a>
+                    </article>
+                    <article class="new">
+                        <span class="new-date">16.07.2023</span>
+                        <a href="" class="new-image">
+                            <img src="img/news/4.png" alt="">
+                        </a>
+                        <h3><a href="">WindTech Expands Renewable Energy Footprint with New Wind Farm Project</a></h3>
+                        <a href="" class="_more">learn more</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')

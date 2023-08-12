@@ -585,6 +585,50 @@
             margin-inline: auto 0;
         }
     }
+
+    // .news-all
+
+    &-all {
+        .new {
+            grid-row: unset !important;
+            grid-column: unset !important;
+
+            &:nth-child(2) h3 {
+                @include adaptive-value("font-size", 20, 18, 1);
+            }
+
+            @media (min-width: 769px) {
+                &:not(:first-child),
+                &:not(:nth-child(2)) {
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: $color_main;
+                        opacity: 0.1;
+                        z-index: -1;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &:before {
+                        display: block;
+                        left: unset;
+                        right: 0;
+                    }
+                }
+
+                &:nth-child(2n) {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .product {
@@ -669,6 +713,81 @@
                 width: 600px;
                 max-width: none;
             }
+        }
+    }
+}
+
+.contacts {
+    // .contacts-flex
+
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        @media (max-width: 768px) {
+            display: block;
+
+            & > :not(:last-child) {
+                margin-bottom: 35px;
+            }
+        }
+
+        div {
+            width: calc(50% - 20px);
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        h4 {
+            @include adaptive-value("font-size", 20, 18, 1);
+            margin-bottom: 15px;
+            padding-bottom: 0.2em;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $color_main;
+                opacity: 0.1;
+            }
+        }
+
+        P {
+        }
+    }
+
+    .services-item {
+        label {
+            text-align: right;
+            margin-left: auto;
+            max-width: 420px;
+        }
+    }
+}
+
+.single {
+    .section__flex-image {
+        @media (max-width: 1024px) {
+            @include adaptive-value("height", 400, 250, 1);
+            margin-bottom: 20px;
+        }
+    }
+
+    .section__right {
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        p {
+            @include adaptive-value("margin-top", 20, 15, 1);
         }
     }
 }
