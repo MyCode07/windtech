@@ -145,13 +145,16 @@
             p {
                 flex: 1 1 auto;
 
-                & > :not(:last-child) {
-                    margin-bottom: 25px;
+                &:not(:first-child) {
+                    margin-top: 25px;
+
+                    @media (max-width: 768px) {
+                        margin-top: 15px;
+                    }
                 }
 
                 @media (max-width: 768px) {
                     order: 3;
-                    margin-top: 15px;
                 }
             }
 
@@ -165,6 +168,7 @@
                 @media (max-width: 768px) {
                     order: 1;
                     margin-top: 0;
+                    margin-bottom: 15px;
                 }
             }
 

@@ -1,9 +1,13 @@
+import './utils/preloader.js';
+import './utils/notice.js';
+
 import './utils/menu.js';
 import './utils/accordeon.js';
 import './utils/replace.js';
 import './utils/sliders.js';
 import './utils/header.js';
 import './utils/to-top.js';
+
 
 // import './utils/inputmask.js';
 // import './utils/popup.js';

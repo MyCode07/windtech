@@ -49,6 +49,9 @@
 // load popup
 @import "common/popup";
 
+// load preloader
+@import "parts/preloader";
+
 // load hero
 @import "parts/hero";
 
@@ -66,3 +69,6 @@
 
 // load gallery
 @import "parts/gallery";
+
+// load notice
+@import "parts/notice";

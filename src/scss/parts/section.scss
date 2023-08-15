@@ -67,6 +67,7 @@
 
     &__title {
         margin-bottom: 30px;
+        color: $color_2;
 
         position: relative;
         // width: calc(38% + 50px);
@@ -86,7 +87,7 @@
             padding-right: 15px;
 
             @media (max-width: 1024px) {
-                width: fit-content;
+                width: 100%;
             }
 
             &:before {
@@ -99,6 +100,12 @@
                 width: 100vw;
                 height: 100%;
                 background-color: $accent;
+
+                @media (max-width: 1024px) {
+                    width: 101vw;
+                    right: 50%;
+                    transform: translate(50%, 0);
+                }
             }
 
             &:after {
@@ -110,15 +117,26 @@
                 width: 100vw;
                 background-color: $color_main;
                 opacity: 0.2;
+
+                @media (max-width: 1024px) {
+                    display: none;
+                }
             }
         }
 
         .section__right {
+            @media (max-width: 1024px) {
+                display: none;
+            }
         }
 
         span {
             white-space: nowrap;
             @include adaptive-value("font-size", 12, 10, 1);
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
 
         h2 {
@@ -133,7 +151,6 @@
 
         @media (max-width: 1024px) {
             max-width: none;
-            width: calc(100% - 50px);
             margin-left: auto;
         }
 
@@ -495,10 +512,6 @@
             }
         }
 
-        @media (max-width: 1024px) {
-            margin-left: -50px;
-        }
-
         &:after {
             position: absolute;
             bottom: 0;
@@ -712,6 +725,18 @@
             @media (max-width: 620px) {
                 width: 600px;
                 max-width: none;
+            }
+        }
+    }
+
+    // .about-page
+
+    &-page {
+        .grid {
+            @media (max-width: 768px) {
+                & > :not(:last-child) {
+                    margin-bottom: 15px;
+                }
             }
         }
     }
