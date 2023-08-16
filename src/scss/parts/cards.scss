@@ -15,7 +15,9 @@
         opacity: 0.1;
     }
 
-    @include adaptive-value("padding", 30, 15, 1);
+    @media (min-width: 769px) {
+        @include adaptive-value("padding", 30, 15, 1);
+    }
 
     @media (max-width: 768px) {
         display: grid;
@@ -23,6 +25,8 @@
         align-items: flex-end;
 
         @include adaptive-value("padding-top", 60, 30, 1);
+        @include adaptive-value("padding-bottom", 30, 15, 1);
+        @include adaptive-value("padding-inline", 30, 15, 1);
 
         &:not(:last-child) {
             &:before {
