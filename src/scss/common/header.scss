@@ -40,6 +40,10 @@
     nav {
         width: 64%;
 
+        @media (max-width: 1024px) {
+            width: 84%;
+        }
+
         @media (max-width: 768px) {
             display: none;
         }
