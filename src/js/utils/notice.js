@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function (e) {
     const notice = document.querySelector('.notice');
     let allowClick = false;
-    const accept = CookieManager.get('accept');
+    // const accept = CookieManager.get('accept');
 
-    if (!accept) {
-        setTimeout(() => {
-            notice.classList.add('_open')
-            allowClick = true
-        }, 10000);
-    }
+    // if (!accept) {
+    setTimeout(() => {
+        notice.classList.add('_open')
+        allowClick = true
+    }, 10000);
+    // }
 
     document.addEventListener('click', function (e) {
         let targetEl = e.target;
